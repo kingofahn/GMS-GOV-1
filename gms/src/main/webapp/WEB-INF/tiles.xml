@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- public -->
+	<definition name="public"
+		template="/WEB-INF/views/common/main.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="nav" value="/WEB-INF/views/common/nav.jsp"/>
+		<put-attribute name="content" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	
+	<definition name="public:*/*.tiles" extends="public">
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	
+	<!-- auth -->
+	<definition name="auth:*/*.tiles" extends="public">
+	<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+
+	<!-- login__success -->	
+	<definition name="login_success" extends="public">
+		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+	</definition>
+	<!-- login__fail -->
+	<definition name="login_page" extends="public">
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/login.jsp"/>
+	</definition>
+	<!-- modify -->
+	<definition name="modify_page" extends="public">
+		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/modify.jsp"/>
+	</definition>
+	<!-- remove -->	
+	<definition name="remove_page" extends="public">
+		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/remove.jsp"/>
+	<!-- retrieve -->	
+	</definition>
+		<definition name="retrieve_page" extends="public">
+		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
+	</definition>
+</tiles-definitions>
