@@ -43,13 +43,7 @@
 		</div>
 		
 <script>
-	$('#joinForm_Btn').click(function(){
-		var form = document.getElementById('joinForm');
-		form.action ="${ctx}/member/join";
-		form.method ="post";  /* get으로 하면 노출됨 */
-		form.submit();
-	} else {
-		alert(x.text);			
-	}
-	});
+		$('#joinForm_Btn').click(function(){
+		    $('#joinForm').attr({action:"${ctx}/member/add", method:"POST"}).submit();
+		});
 </script>			

@@ -7,3 +7,10 @@
 		<input type="button" id="removeForm_btn" value="Delete!!!"/>
 	</form>
 </div>
+
+
+<script>
+$('#removeForm_btn').click(function(){
+	$('#removeForm').attr({action:"${ctx}/member/remove/", method:"POST"}).submit();
+});	
+</script>

@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
 @Controller
 @RequestMapping("/member")
+@SessionAttributes("user")
 public class MemberController {
 	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired MemberDTO member;

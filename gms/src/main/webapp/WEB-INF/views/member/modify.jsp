@@ -68,4 +68,9 @@
 				document.getElementById('roll_' + i).checked = true;
 			}
 		}
+		
+		$('#modifyForm_btn').click(function(){
+			$('#modifyForm').attr({action:"${ctx}/member/modify/", method:"POST"}).submit();
+        });
+		
 </script>

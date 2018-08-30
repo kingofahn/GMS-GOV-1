@@ -73,7 +73,7 @@
     </section>
     
 <script>
- 	user.session({userid : '${user.userid}',
+/*  	user.session({userid : '${user.userid}',
 	  		      teamid:"${user.teamid}",
 			      name:"${user.name}",
 			      ssn:"${user.ssn}",
@@ -83,15 +83,29 @@
 			      gender:"${user.gender}",
 			      phone:"${user.phone}",
 			      subject:"${user.subject}"
-				});
- 	
- 	
+				}); */
+	$('#mypage_btn').click(function(){   
+		location.href = '${ctx}/member/retrieve/${user.userid}/retrieve';
+	});
  	$('#board_write').click(function(){
- 		alert('board_write')
+ 		alert('board_register');
+ 		location.href = '${ctx}/board/register';
  	});
  	
  	$('#board_list').click(function(){
  		alert('board_write')
  	});
+ 	
+ 	$('#modify_btn').click(function(){
+		location.href = '${ctx}/member/retrieve/${user.userid}/modify';
+	});
+	
+	$('#logout_btn').click(function(){   
+		location.href = '${ctx}/member/logout';
+	});
+
+	$('#remove_btn').click(function(){   
+		location.href = '${ctx}/member/retrieve/${user.userid}/remove';
+	});
  	
 </script>

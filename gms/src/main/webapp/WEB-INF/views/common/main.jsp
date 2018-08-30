@@ -16,11 +16,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 	<%-- <script src="${ctx}/resources/js/app.js"></script> --%>
 	
-    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/otherresources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="${ctx}/resources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="${ctx}/resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/otherresources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/otherresources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 	
 </head>	
 
@@ -39,9 +39,6 @@
 		<tiles:insertAttribute name="footer"/>
 	</div> 
 </div> 
-<script>
-	app.init('${ctx}');
-	app.setUser({userid : '${user.userid}'});
-</script>
+
 </body>
 </html>

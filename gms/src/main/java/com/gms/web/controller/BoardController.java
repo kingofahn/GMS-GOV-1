@@ -9,21 +9,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.gms.web.domain.ArticleDTO;
 import com.gms.web.service.BoardService;
 
 @Controller
 @RequestMapping("/board")
+@SessionAttributes("user")
 public class BoardController {
 	static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	@Autowired ArticleDTO Board;
 	@Autowired BoardService BoardService;
-	@RequestMapping(value="/add", method=RequestMethod.POST)
+	@RequestMapping("/register")
 	public String add(@ModelAttribute("Board") ArticleDTO Board) {
 		logger.info("\n --------- BoardController {} !!--------","add");
-		BoardService.add(Board);
-		return "login_page";
+		/*BoardService.add(Board);*/
+		return "register_page";
 	}
 	@RequestMapping("/list")
 	public void list() {}
@@ -69,6 +71,7 @@ public class BoardController {
 		BoardService.remove(Board);
 		return "redirect:/";
 	}
+	
 	@RequestMapping("/fileUpload")
 	public void fileUpload() {} 
 

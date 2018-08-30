@@ -12,15 +12,7 @@
 
 
 <script>
-		var form = $('#userLoginForm');
 		$('#loginForm_btn').click(function(){
-				form.action ="${ctx}/member/login";
-				form.method ="post";  /* get으로 하면 노출됨 */
-				var node = document.createElement('input');
-					node.setAttribute('type','hidden');
-					node.setAttribute('name','action')
-					node.setAttribute('value','login')
-					form.appendChild(node);
-				form.submit();
-});
+			$('#userLoginForm').attr({action:"${ctx}/member/login", method:"POST"}).submit();
+        });
 </script>	
