@@ -22,35 +22,16 @@
 	<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
-	<!-- login__success -->	
+	
+	<!--login__success--> 
 	<definition name="login_success" extends="public">
 		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-	</definition>
-	<!-- login__fail -->
-	<definition name="login_page" extends="public">
+	</definition> 	
+	
+	<!--login_fail--> 
+ 	<definition name="login_fail" extends="public">
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/member/login.jsp"/>
-	</definition>
-	<!-- modify -->
-	<definition name="modify_page" extends="public">
-		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/member/modify.jsp"/>
-	</definition>
-	<!-- remove -->	
-	<definition name="remove_page" extends="public">
-		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/member/remove.jsp"/>
-	<!-- retrieve -->	
-	</definition>
-		<definition name="retrieve_page" extends="public">
-		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
-	</definition>
-	<!-- register -->
-	<definition name="register_page" extends="public">
-		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/board/register.jsp"/>
-	</definition>
-	
+	</definition> 
 	
 </tiles-definitions>

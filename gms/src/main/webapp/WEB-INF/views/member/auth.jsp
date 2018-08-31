@@ -85,27 +85,22 @@
 			      subject:"${user.subject}"
 				}); */
 	$('#mypage_btn').click(function(){   
-		location.href = '${ctx}/member/retrieve/${user.userid}/retrieve';
+		location.href = '${ctx}/move/auth/member/retrieve/';
 	});
- 	$('#board_write').click(function(){
- 		alert('board_register');
- 		location.href = '${ctx}/board/register';
- 	});
- 	
- 	$('#board_list').click(function(){
- 		alert('board_write')
- 	});
- 	
  	$('#modify_btn').click(function(){
-		location.href = '${ctx}/member/retrieve/${user.userid}/modify';
+		location.href = '${ctx}/move/auth/member/modify';
 	});
-	
 	$('#logout_btn').click(function(){   
 		location.href = '${ctx}/member/logout';
 	});
-
 	$('#remove_btn').click(function(){   
-		location.href = '${ctx}/member/retrieve/${user.userid}/remove';
+		location.href = '${ctx}/move/auth/member/remove';
 	});
+ 	$('#board_write').click(function(){
+ 		location.href = '${ctx}/move/auth/board/register';
+ 	});
+ 	$('#board_list').click(function(){
+ 		location.href = '${ctx}/move/auth/board/listAll';
+ 	});
  	
 </script>

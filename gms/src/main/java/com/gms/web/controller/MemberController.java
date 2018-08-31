@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -31,55 +30,48 @@ public class MemberController {
 	@RequestMapping("/search")
 	public void search() {}
 	
-	@RequestMapping("/retrieve/{userid}/{action}")
-	public String retrieve(@PathVariable String userid, 
-							@PathVariable String action, Model model) {
+	@RequestMapping("/retrieve")
+	public void retrieve(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("\n --------- MemberController {} !!--------","retrieve");
-		String res = "";
-		member.setUserid(userid);
-		switch(action) {
-		case "modify" :  
-			res="modify_page";
-			logger.info("\n --------- retrieve() {} !!--------",res);
-			break;
-		case "remove" :
-			res="remove_page";
-			logger.info("\n --------- retrieve() {} !!--------",res);
-			break;
-		default :  
-			res="retrieve_page";
-			logger.info("\n --------- retrieve() {} !!--------",res);
-			break;
-		}
 		model.addAttribute("user",memberService.retrieve(member));
-		return res;
 	}
+	
 	@RequestMapping("/count")
 	public void count() {}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modify(@ModelAttribute("member") MemberDTO member, Model model) {
+	public String modify(@ModelAttribute("member") MemberDTO member, 
+						@ModelAttribute("user") MemberDTO user,
+						Model model) {
 		logger.info("\n --------- MemberController {} !!--------","modify");
+		System.out.println("user : " + user);
+		System.out.println("member : " + member);
+		member.setUserid(user.getUserid());
 		memberService.modify(member);
 		model.addAttribute("user", memberService.retrieve(member));
-		return "retrieve_page";
+		return "login_success";
 	}
+	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
-	public String remove(@ModelAttribute("member") MemberDTO member) {
+	public String remove(@ModelAttribute("member") MemberDTO member,
+						@ModelAttribute("user") MemberDTO user,
+						Model model) {
 		logger.info("\n --------- MemberController {} !!--------","remove");
+		member.setUserid(user.getUserid());
 		memberService.remove(member);
 		return "redirect:/";
 	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("\n --------- MemberController {} !!--------","login");
 		member = memberService.login(member);
 		String flag ="";
 		if(member!=null) {
-			flag = "login_success";
 			model.addAttribute("user", memberService.retrieve(member));
+			flag = "login_success";
 		} else {
-			flag = "login_page";
+			flag = "login_fail";
 		}
 		logger.info("\n login 결과 {}",flag);
 		return flag;

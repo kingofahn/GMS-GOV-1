@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="content-box">
-	<table style="width:410px; margin:auto; border: 1px solid grey; font-size: 15px; text-align: center;">
+	<table style="width:50%; margin:auto; border: 1px solid grey; font-size: 15px; text-align: center;">
 			<tr>
 				<td>아이디</td>
 				<td>${user.userid}</td>

@@ -10,7 +10,7 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">"{user.userid}"님 REGISTER BOARD</h3>
+					<h3 class="box-title">${user.userid}님 REGISTER BOARD</h3>
 				</div>
 				<!-- /.box-header -->
 
