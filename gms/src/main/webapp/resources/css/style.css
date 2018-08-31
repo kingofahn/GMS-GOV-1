@@ -8,13 +8,35 @@ h1{
 	margin-bottom: 0;
 }
 
+table{
+	width:50%;
+	text-align: center;
+	margin:0 auto;
+	font-size: 1.5em;
+}
+
+td{
+	height:50px
+}
+
 table, th, td{
 	border:1px solid gray;
 }
+
+
+div.userLoginForm{
+	text-align: center;
+	border:1px solid gray;
+	width: 410px; 
+	margin: auto;
+	font-size: 25px; 
+}
+
 .menu-box{
 	margin-top: 30px;
 	clear: both;
 }
+
 .marginTop30px{margin-top: 30px}
 .menu{
 	text-align: right;

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div id="contentBox" style="width:50%; margin: auto; border: 1px solid grey;">
+<div id="contentBox">
 <h1>${user.userid}님의 회원 탈퇴 페이지</h1>
 	<form id="removeForm" name="removeForm">
 		비밀번호 재입력 

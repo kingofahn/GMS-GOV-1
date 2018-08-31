@@ -21,6 +21,7 @@
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="${ctx}/resources/otherresources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <link href="${ctx}/resources/otherresources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/css/style.css" rel="stylesheet"/>
 	
 </head>	
 

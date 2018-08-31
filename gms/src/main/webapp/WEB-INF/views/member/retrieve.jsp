@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="content-box">
-	<table style="width:50%; margin:auto; border: 1px solid grey; font-size: 15px; text-align: center;">
+	<table>
 			<tr>
 				<td>아이디</td>
 				<td>${user.userid}</td>
@@ -37,10 +36,6 @@
 			<tr>
 				<td>수강과목</td>
 				<td>${user.subject}</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
 			</tr>
 	</table>
 </div>

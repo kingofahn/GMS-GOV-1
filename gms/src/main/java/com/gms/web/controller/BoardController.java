@@ -21,7 +21,7 @@ public class BoardController {
 	public String add(@ModelAttribute("Board") ArticleDTO Board) {
 		logger.info("\n --------- BoardController {} !!--------","add");
 		/*BoardService.add(Board);*/
-		return "register_page";
+		return "auth:board/listAll.tiles";
 	}
 	@RequestMapping("/listAll")
 	public void list() {}
@@ -40,7 +40,7 @@ public class BoardController {
 		logger.info("\n --------- BoardController {} !!--------","modify");
 		BoardService.modify(Board);
 		model.addAttribute("user", BoardService.retrieve(Board));
-		return "retrieve_page";
+		return "auth:board/retrieve.tiles";
 	}
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
 	public String remove(@ModelAttribute("Board") ArticleDTO Board) {

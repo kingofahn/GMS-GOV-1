@@ -12,7 +12,8 @@
 		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
 	</definition>
-
+	
+	<!-- public content-->
 	<definition name="public:*/*.tiles" extends="public">
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
@@ -22,16 +23,4 @@
 	<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
-	
-	<!--login__success--> 
-	<definition name="login_success" extends="public">
-		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
-	</definition> 	
-	
-	<!--login_fail--> 
- 	<definition name="login_fail" extends="public">
-		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/member/login.jsp"/>
-	</definition> 
-	
 </tiles-definitions>

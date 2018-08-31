@@ -7,7 +7,7 @@
           <div class="col-lg-4" id="mypage_btn">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
+                <i class="icon-screen-desktop m-auto text-primary"></i>
               </div>
 	              <h3> 마이페이지 </h3>
               <p class="lead mb-0"> ${user.name}님의 마이페이지 입니다.<br>
@@ -37,10 +37,10 @@
           </div>
           
           
-           <div class="col-lg-4" id="modify_btn">
+          <div class="col-lg-4" id="modify_btn">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
+                <i class="icon-screen-desktop m-auto text-primary"></i>
               </div>
 	              <h3> 회원 수정 </h3>
               <p class="lead mb-0"> ${user.userid}님의 개인정보를 <br> 수정하세요<br>

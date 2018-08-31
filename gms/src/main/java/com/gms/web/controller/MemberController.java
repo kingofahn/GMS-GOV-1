@@ -44,12 +44,12 @@ public class MemberController {
 						@ModelAttribute("user") MemberDTO user,
 						Model model) {
 		logger.info("\n --------- MemberController {} !!--------","modify");
-		System.out.println("user : " + user);
-		System.out.println("member : " + member);
+		logger.info("user : {}", user);
+		logger.info("member : {}", member);
 		member.setUserid(user.getUserid());
 		memberService.modify(member);
 		model.addAttribute("user", memberService.retrieve(member));
-		return "login_success";
+		return "public:member/login.tiles";
 	}
 	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
@@ -65,15 +65,15 @@ public class MemberController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("\n --------- MemberController {} !!--------","login");
-		member = memberService.login(member);
 		String flag ="";
-		if(member!=null) {
+		if(memberService.login(member)!=null) {
 			model.addAttribute("user", memberService.retrieve(member));
-			flag = "login_success";
+			flag = "auth:common/content.tiles";
+			logger.info("\n login 결과 {}", "Success");
 		} else {
-			flag = "login_fail";
+			flag = "public:member/login.tiles";
+			logger.info("\n login 결과 {}", "Success");
 		}
-		logger.info("\n login 결과 {}",flag);
 		return flag;
 	}
 	@RequestMapping("/logout")
